@@ -1,62 +1,62 @@
-version: "1.0"
-info:
-  model: int-scaffold
-packages:
-- name: ExtGitProj_ProjVersionProject
-  gitServerName: GH_SK_Shared
-  gitUrl: https://github.com/santhu736852
-  gitUsername: santhu736852
-  gitBranch: main
-- name: Package2
-  version: "2.0"
-  gitServerName: GH_SK_Shared
-  gitUrl: https://github.com/santhu736852
-  gitUsername: santhu736852
-  gitBranch: main
-services:
-- serviceName: project.extgitproj_projversion.integrations:TestFlow1
-  packages:
-  - name: ExtGitProj_ProjVersionProject
-    version: "1.0"
-  - name: Package2
-    version: "2.0"
-- serviceName: pub.date:getCurrentDate
-  packages:
-  - name: WmPublic
-    version: 12.1.0.0.1206
-- serviceName: project.extgitproj_projversion.integrations:pkgService
-  packages:
-  - name: ExtGitProj_ProjVersionProject
-    version: "1.0"
-  - name: Package2
-    version: "2.0"
-- serviceName: Package2:flowservice2
-  packages:
-  - name: Package2
-    version: "2.0"
-- serviceName: pub.math:addInts
-  packages:
-  - name: WmPublic
-    version: 12.1.0.0.1206
-- serviceName: pub.flow:debugLog
-  packages:
-  - name: WmPublic
-    version: 12.1.0.0.1206
 configurationVariables:
-  jdbc.SAP TxStore Pool.maxConns: "10"
-  jdbcfunc.SAPTxStore.failFastMode: false
-  jdbc.SAP TxStore Pool.poolThreshold: "0"
+  jdbc.SAP TxStore Pool.maxConns: '10'
+  jdbcfunc.SAPTxStore.failFastMode: 'false'
+  jdbc.SAP TxStore Pool.poolThreshold: '0'
   jdbc.SAP TxStore Pool.dbURL: jdbc:mysql://adapter-mysql-80-on-amazonrds.cdmjexwbzoym.us-east-1.rds.amazonaws.com:3306/SAPTRANSACTIONSTORE?useSSL=false&characterEncoding=utf-8&autoReconnect=true&maxReconnects=5&sessionVariables=wait_timeout=2147483
-  jdbc.SAP TxStore Pool.spyenabled: "false"
-  jdbc.SAP TxStore Pool.useSSL: "false"
-  jdbc.SAP TxStore Pool.waitingThread: "10"
+  jdbc.SAP TxStore Pool.spyenabled: 'false'
+  jdbc.SAP TxStore Pool.useSSL: 'false'
+  jdbc.SAP TxStore Pool.waitingThread: '10'
   jdbc.SAP TxStore Pool.description: Connection Pool for the SAP Transaction Store
-  jdbc.SAP TxStore Pool.password: "{AES}7EzrljL+N3kbQseeO6Awng=="
+  jdbc.SAP TxStore Pool.password: '{AES}7EzrljL+N3kbQseeO6Awng=='
   jdbc.SAP TxStore Pool.spyparms: SpyAttributes=(log=(file)logs/spy/SAP_TxStore_Pool.log;logTName=yes;timestamp=yes)
-  jdbc.SAP TxStore Pool.snoopenabled: "false"
+  jdbc.SAP TxStore Pool.snoopenabled: 'false'
   jdbc.SAP TxStore Pool.snoopparms: ddtdbg.ProtocolTraceEnable=true;ddtdbg.ProtocolTraceMaxline=16;ddtdbg.ProtocolTraceLocation=logs/snoop/SAP_TxStore_Pool.log;ddtdbg.ProtocolTraceShowTime=true
-  jdbc.SAP TxStore Pool.expireTime: "60000"
-  jdbc.SAP TxStore Pool.minConns: "5"
+  jdbc.SAP TxStore Pool.expireTime: '60000'
+  jdbc.SAP TxStore Pool.minConns: '5'
   jdbc.SAP TxStore Pool.userid: sapuser
   jdbc.SAP TxStore Pool.driverAlias: MySQL CC Driver
   jdbcfunc.SAPTxStore.connPoolAlias: SAP TxStore Pool
+info:
+  model: int-scaffold
+packages:
+- gitBranch: release/1.0.0
+  gitServerName: GH_SK_Shared
+  gitUrl: https://github.com/santhu736852
+  gitUsername: santhu736852
+  name: ExtGitProj_ProjVersionProject
+- gitBranch: main
+  gitServerName: GH_SK_Shared
+  gitUrl: https://github.com/santhu736852
+  gitUsername: santhu736852
+  name: Package2
+  version: '2.0'
+services:
+- packages:
+  - name: ExtGitProj_ProjVersionProject
+    version: 1.0.0
+  - name: Package2
+    version: '2.0'
+  serviceName: project.extgitproj_projversion.integrations:TestFlow1
+- packages:
+  - name: WmPublic
+    version: 12.1.0.0.1206
+  serviceName: pub.date:getCurrentDate
+- packages:
+  - name: ExtGitProj_ProjVersionProject
+    version: 1.0.0
+  - name: Package2
+    version: '2.0'
+  serviceName: project.extgitproj_projversion.integrations:pkgService
+- packages:
+  - name: Package2
+    version: '2.0'
+  serviceName: Package2:flowservice2
+- packages:
+  - name: WmPublic
+    version: 12.1.0.0.1206
+  serviceName: pub.math:addInts
+- packages:
+  - name: WmPublic
+    version: 12.1.0.0.1206
+  serviceName: pub.flow:debugLog
+version: 1.0.0
