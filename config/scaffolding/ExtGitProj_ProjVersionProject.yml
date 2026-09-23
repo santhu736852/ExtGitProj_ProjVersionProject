@@ -7,6 +7,15 @@ packages:
   gitUrl: https://github.com/santhu736852
   gitUsername: santhu736852
   gitBranch: main
+services:
+- serviceName: project.extgitproj_projversion.integrations:TestFlow1
+  packages:
+  - name: ExtGitProj_ProjVersionProject
+    version: "1.0"
+- serviceName: pub.date:getCurrentDate
+  packages:
+  - name: WmPublic
+    version: 12.1.0.0.1206
 configurationVariables:
   jdbc.SAP TxStore Pool.maxConns: "10"
   jdbcfunc.SAPTxStore.failFastMode: false
